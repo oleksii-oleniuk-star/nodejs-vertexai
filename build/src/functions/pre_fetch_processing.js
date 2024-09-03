@@ -60,7 +60,7 @@ function validateGenerationConfig(generationConfig) {
 }
 exports.validateGenerationConfig = validateGenerationConfig;
 function getApiVersion(request) {
-    return hasVertexRagStore(request) ? 'v1beta1' : 'v1';
+    return 'v1beta1';
 }
 exports.getApiVersion = getApiVersion;
 function hasVertexRagStore(request) {

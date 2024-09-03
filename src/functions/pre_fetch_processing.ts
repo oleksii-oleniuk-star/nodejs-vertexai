@@ -80,7 +80,7 @@ export function validateGenerationConfig(
 export function getApiVersion(
   request: GenerateContentRequest
 ): 'v1' | 'v1beta1' {
-  return hasVertexRagStore(request) ? 'v1beta1' : 'v1';
+  return 'v1beta1';
 }
 
 export function hasVertexRagStore(request: GenerateContentRequest): boolean {
