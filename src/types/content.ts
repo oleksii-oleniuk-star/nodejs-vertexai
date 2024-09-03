@@ -62,6 +62,10 @@ export declare interface GenerateContentRequest extends BaseModelParams {
    * Note: only text should be used in parts of {@link Content}
    */
   systemInstruction?: string | Content;
+  /**
+   * Optional. For Gemini Context Cache
+   */
+  cached_content?: string;
 }
 
 /**
@@ -1021,6 +1025,10 @@ export declare interface StartChatParams {
    * Note: only text should be used in parts of {@link Content}
    */
   systemInstruction?: string | Content;
+  /**
+   * Optional. For Gemini Context Cache
+   */
+  cachedContent?: string;
 }
 
 /**

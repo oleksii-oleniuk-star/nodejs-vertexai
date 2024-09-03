@@ -295,6 +295,7 @@ export class GenerativeModelPreview {
   private readonly publisherModelEndpoint: string;
   private readonly resourcePath: string;
   private readonly apiEndpoint?: string;
+  private readonly cachedContent?: string;
 
   /**
    * @constructor
@@ -486,6 +487,7 @@ export class GenerativeModelPreview {
       resourcePath: this.resourcePath,
       tools: this.tools,
       systemInstruction: this.systemInstruction,
+      cachedContent: this.cachedContent,
     };
 
     if (request) {
@@ -497,6 +499,7 @@ export class GenerativeModelPreview {
       startChatRequest.tools = request.tools ?? this.tools;
       startChatRequest.systemInstruction =
         request.systemInstruction ?? this.systemInstruction;
+      startChatRequest.cachedContent = request.cachedContent;
     }
     return new ChatSessionPreview(startChatRequest, this.requestOptions);
   }

@@ -131,6 +131,9 @@ export async function generateContentStream(
     tools: request.tools ?? tools,
     toolConfig: request.toolConfig ?? toolConfig,
   };
+  if (request.cached_content) {
+    generateContentRequest.cached_content = request.cached_content;
+  }
   const response = await postRequest({
     region: location,
     resourcePath,

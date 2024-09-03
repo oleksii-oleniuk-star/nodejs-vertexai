@@ -271,6 +271,7 @@ export class ChatSessionPreview {
   private readonly toolConfig?: ToolConfig;
   private readonly apiEndpoint?: string;
   private readonly systemInstruction?: Content;
+  private readonly cachedContent?: string;
 
   async getHistory(): Promise<Content[]> {
     return Promise.resolve(this.historyInternal);
@@ -300,6 +301,7 @@ export class ChatSessionPreview {
         request.systemInstruction
       );
     }
+    this.cachedContent = request.cachedContent;
   }
 
   /**
@@ -430,6 +432,7 @@ export class ChatSessionPreview {
       tools: this.tools,
       toolConfig: this.toolConfig,
       systemInstruction: this.systemInstruction,
+      cached_content: this.cachedContent,
     };
 
     const streamGenerateContentResultPromise = generateContentStream(
