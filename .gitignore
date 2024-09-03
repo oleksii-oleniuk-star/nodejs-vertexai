@@ -1,6 +1,6 @@
 # Ignore directories generated automatically.
 node_modules/
-build/
+#build/ # temporary comment out
 docs/
 .nyc_output/
 
