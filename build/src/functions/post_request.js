@@ -43,6 +43,8 @@ async function postRequest({ region, resourcePath, resourceMethod, token, data, 
         [USER_AGENT_HEADER]: constants.USER_AGENT,
     });
     const totalHeaders = getExtraHeaders(vertexBaseEndpoint, necessaryHeaders, requestOptions);
+    console.log('vertexEndpoint', vertexEndpoint);
+    console.log('json.stringify vertexai data', JSON.stringify(data));
     return fetch(vertexEndpoint, {
         ...getFetchOptions(requestOptions),
         method: 'POST',
